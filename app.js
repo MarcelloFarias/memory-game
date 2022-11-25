@@ -20,3 +20,15 @@ function shuffleIndexes(array) {
     return array;
 }
 
+function renderElements() {
+    const numberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    const shuffledList = shuffleIndexes(numberList);
+
+    for(let i = 0; i < elements.length; i++) {
+        gameContainer.innerHTML += generateCard(elements[shuffledList[i]]);
+    }
+}
+
+window.onload = () => {
+    renderElements();
+}
