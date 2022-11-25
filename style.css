@@ -42,11 +42,44 @@ main {
     row-gap: 12px;
 }
 
-.card {
+.flip-container {
     width: 100px;
     height: 100px;
-    background: rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+    perspective: 1000px;
     display: grid;
     place-items: center;
-    font-size: 2rem;
+    cursor: pointer;
+}
+
+.flipper{
+    position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.back {
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+.front {
+    background: #333;
+    border-radius: 10px;
+}
+
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-container .flipper{
+	transform: rotateY(0);
 }

@@ -3,10 +3,17 @@ const gameContainer = document.querySelector('.container');
 const elements = ['🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎', '🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎'];
 
 function generateCard(element) {
-    const card = `<div class='card'> 
-                    <p>${element}</p>
+    const card = `<div class='flip-container'> 
+                    <div class='flipper'>
+                        <div class='front'>
+                            
+                        </div>
+                        <div class='back'>
+                            <p class='element'>${element}</p>
+                        </div>
+                    </div>
                  </div>`;
-    
+
     return card;
 }
 
