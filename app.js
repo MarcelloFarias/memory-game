@@ -26,6 +26,6 @@ function distributeElements() {
 window.onload = () => {
     distributeElements();
     flipper.forEach((e) => e.addEventListener('click', () => {
-        e.classList.toogle('flipped');
+        e.classList.toggle('flipped');
     }));
 }
