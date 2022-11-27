@@ -1,21 +1,7 @@
-const gameContainer = document.querySelector('.container');
+const emojiElement = document.querySelectorAll('.element');
+
 
 const elements = ['🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎', '🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎'];
-
-function generateCard(element) {
-    const card = `<div class='flip-container'> 
-                    <div class='flipper'>
-                        <div class='front'>
-                            
-                        </div>
-                        <div class='back'>
-                            <p class='element'>${element}</p>
-                        </div>
-                    </div>
-                 </div>`;
-
-    return card;
-}
 
 function shuffleIndexes(array) {
     for(let i = array.length - 1; i > 0; i--) {
@@ -27,15 +13,15 @@ function shuffleIndexes(array) {
     return array;
 }
 
-function renderElements() {
-    const numberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-    const shuffledList = shuffleIndexes(numberList);
+function distributeElements() {
+    const indexesList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    const shuffledIndexesList = shuffleIndexes(indexesList);
 
     for(let i = 0; i < elements.length; i++) {
-        gameContainer.innerHTML += generateCard(elements[shuffledList[i]]);
+        emojiElement[i].innerText = elements[shuffledIndexesList[i]];
     }
 }
 
 window.onload = () => {
-    renderElements();
+    distributeElements();
 }

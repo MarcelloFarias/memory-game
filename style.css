@@ -80,6 +80,6 @@ main {
     backface-visibility: hidden;
 }
 
-.flip-container .flipper{
-	transform: rotateY(0);
+.flip-container:hover .flipper{
+	transform: rotateY(180deg);
 }
