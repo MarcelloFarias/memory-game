@@ -1,4 +1,5 @@
 const emojiElement = document.querySelectorAll('.element');
+const flipper = document.querySelectorAll('.flipper');
 
 
 const elements = ['🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎', '🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎'];
@@ -24,4 +25,7 @@ function distributeElements() {
 
 window.onload = () => {
     distributeElements();
+    flipper.forEach((e) => e.addEventListener('click', () => {
+        e.classList.toogle('flipped');
+    }));
 }
