@@ -4,6 +4,8 @@ const flipper = document.querySelectorAll('.flipper');
 
 const elements = ['🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎', '🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎'];
 
+let selecteds = [];
+
 function shuffleIndexes(array) {
     for(let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -11,7 +13,7 @@ function shuffleIndexes(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 
-    return array;
+    return array;   
 }
 
 function distributeElements() {
@@ -25,7 +27,13 @@ function distributeElements() {
 
 window.onload = () => {
     distributeElements();
+    let selected = 0;
     flipper.forEach((e) => e.addEventListener('click', () => {
-        e.classList.toggle('flipped');
+        if(selected < 2) {
+            if(e.className == 'flipper') {
+                e.classList.toggle('flipped');
+                selected++;
+            }
+        }
     }));
 }
