@@ -39,19 +39,23 @@ function init() {
                     if(selecteds.length == 2) {
                         if(selecteds[0].emoji == selecteds[1].emoji) {
                             setTimeout(() => {
-                                selecteds[0].element.classList.toggle('equals');
-                                selecteds[1].element.classList.toggle('equals');
-                                selecteds.splice(0, 1);
-                                selecteds.splice(0, 1);
+                                for(let i = 0; i < selecteds.length; i++) {
+                                    selecteds[i].element.classList.toggle('equals');
+                                }
+                                for(let i = 0; i < 2; i++) {
+                                    selecteds.splice(0, 1);
+                                }
                                 selected = 0;
                             }, 1000);
                         }
                         else {
                             setTimeout(() => {
-                                selecteds[0].element.classList.toggle('flipped');
-                                selecteds[1].element.classList.toggle('flipped');
-                                selecteds.splice(0, 1);
-                                selecteds.splice(0, 1);
+                                for(let i = 0; i < selecteds.length; i++) {
+                                    selecteds[i].element.classList.toggle('flipped');
+                                }
+                                for(let i = 0; i < 2; i++) {
+                                    selecteds.splice(0, 1);
+                                }
                                 selected = 0;
                             }, 2000);
                         }
