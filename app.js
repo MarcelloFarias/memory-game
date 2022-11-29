@@ -1,5 +1,6 @@
 const emojiElement = document.querySelectorAll('.element');
 const flipper = document.querySelectorAll('.flipper');
+const btnRestart = document.querySelector('.btn-restart');
 const elements = ['🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎', '🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎'];
 
 let selecteds = [];
@@ -22,7 +23,7 @@ function distributeElements() {
     }
 }
 
-window.onload = () => {
+function init() {
     distributeElements();
 
     let selected = 0;
@@ -61,3 +62,12 @@ window.onload = () => {
         });
     }
 }
+
+window.onload = () => {
+    init();
+}
+
+btnRestart.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.reload();
+});
