@@ -90,7 +90,8 @@ main {
 
 .equals {
     transform: rotateY(0);
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    transform: scale(0.90);
+    background: rgba(255, 255, 255, 0.5);
+    border: solid 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transition: all 0.2s ease;
 }
