@@ -4,6 +4,7 @@ const btnRestart = document.querySelector('.btn-restart');
 const elements = ['🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎', '🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎'];
 
 let selecteds = [];
+let corrects = 0;
 
 function shuffleIndexes(array) {
     for(let i = array.length - 1; i > 0; i--) {
@@ -47,6 +48,8 @@ function init() {
                                 }
                                 selected = 0;
                             }, 1000);
+
+                            corrects++;
                         }
                         else {
                             setTimeout(() => {
@@ -57,11 +60,17 @@ function init() {
                                     selecteds.splice(0, 1);
                                 }
                                 selected = 0;
-                            }, 2000);
+                            }, 1000);
                         }
                     }
                     selected++;
                 }
+            }
+
+            if(corrects === 8) {
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             }
         });
     }
