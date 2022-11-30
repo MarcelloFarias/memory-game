@@ -18,6 +18,8 @@ header {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    background: #810CA8;
+    color: #2D033B;
 }
 
 .btn-restart {
@@ -26,6 +28,14 @@ header {
     border: none;
     outline: none;
     cursor: pointer;
+    width: 100px;
+    border-radius: 10px;
+    background: #E5B8F4;
+    color: #2D033B;
+}
+
+.btn-restart:hover {
+    background: #C147E9;
 }
 
 main {
@@ -33,6 +43,7 @@ main {
     height: 90vh;
     display: grid;
     place-items: center;
+    background: #2D033B;
 }
 
 .container {
@@ -63,13 +74,13 @@ main {
 .back {
     display: grid;
     place-items: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
     transform: rotateY(180deg);
     border-radius: 10px;
 }
 
 .front {
-    background: #333;
+    background: #E5B8F4;
     border-radius: 10px;
 }
 
