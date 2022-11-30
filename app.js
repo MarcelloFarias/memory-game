@@ -1,7 +1,7 @@
 const emojiElement = document.querySelectorAll('.element');
 const flipper = document.querySelectorAll('.flipper');
 const btnRestart = document.querySelector('.btn-restart');
-const elements = ['🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎', '🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎'];
+const elements = ['🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎','🍍', '🍉', '🍌', '🍒', '🍓', '🍋', '🥝', '🍇', '🍎', '🍍'];
 
 let selecteds = [];
 let corrects = 0;
@@ -67,7 +67,7 @@ function init() {
                 }
             }
 
-            if(corrects === 8) {
+            if(corrects === 9) {
                 setTimeout(() => {
                     window.location.reload();
                 }, 2000);
