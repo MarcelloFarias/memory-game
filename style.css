@@ -55,7 +55,7 @@ main {
 }
 
 .container {
-    width: 100%;
+    width: 50%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     row-gap: 12px;
@@ -124,4 +124,10 @@ footer {
     place-items: center;
     background: var(--primaryColor);
     color: var(--tertiaryColor);
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 100%;
+    }
 }
